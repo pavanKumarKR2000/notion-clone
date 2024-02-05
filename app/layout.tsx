@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Overpass } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 
-const font = Overpass({ subsets: ["latin"], weight: ["400"] });
+const font = Rubik({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Jotion",
