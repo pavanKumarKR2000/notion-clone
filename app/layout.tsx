@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import {
+  Balsamiq_Sans,
+  Inclusive_Sans,
+  Spline_Sans,
+  Port_Lligat_Sans,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ConvexClientProvider } from "@/components/providers/ConvexProvider";
+import { Toaster } from "sonner";
 
-const font = Outfit({ subsets: ["latin"], weight: ["400"] });
+const font = Port_Lligat_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Jotion",
@@ -42,6 +48,7 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
+          <Toaster position="bottom-center" />
         </ConvexClientProvider>
       </body>
     </html>
