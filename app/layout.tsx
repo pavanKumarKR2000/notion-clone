@@ -9,6 +9,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ConvexClientProvider } from "@/components/providers/ConvexProvider";
 import { Toaster } from "sonner";
+import ModalProvider from "@/components/modals/ModalProvider";
 
 const font = Port_Lligat_Sans({ subsets: ["latin"], weight: ["400"] });
 
@@ -49,6 +50,7 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
           <Toaster position="bottom-center" />
+          <ModalProvider />
         </ConvexClientProvider>
       </body>
     </html>

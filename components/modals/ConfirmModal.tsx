@@ -14,7 +14,7 @@ import {
 } from "../ui/alert-dialog";
 
 interface ConfirmModalProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onConfirm: () => void;
 }
 
