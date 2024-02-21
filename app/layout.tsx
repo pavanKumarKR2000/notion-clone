@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ConvexClientProvider } from "@/components/providers/ConvexProvider";
 import { Toaster } from "sonner";
 import ModalProvider from "@/components/modals/ModalProvider";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const font = Port_Lligat_Sans({ subsets: ["latin"], weight: ["400"] });
 
@@ -41,16 +42,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
         <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-          <Toaster position="bottom-center" />
-          <ModalProvider />
+          <EdgeStoreProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+            <Toaster position="bottom-center" />
+            <ModalProvider />
+          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>
